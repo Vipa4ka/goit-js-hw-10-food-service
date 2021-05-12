@@ -1,5 +1,5 @@
 {
-  "name": "webpack-starter-kit",
+  "name": "goit-js-hw-10-food-service",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -17,7 +17,7 @@
   "author": "Elena Ilieva <vipa4ka@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Vipa4ka/goit-js-hw-10-food-service.git"
+    "url": "https://github.com/Vipa4ka/goit-js-hw-10-food-service#readme"
   },
   "homepage": "https://Vipa4ka.github.io/goit-js-hw-10-food-service",
   "devDependencies": {
