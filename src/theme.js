@@ -7,16 +7,10 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-bodyTheme.classList = localStorage.getItem('tool');
-bodyTheme.classList.add(Theme.LIGHT);
+const thema = localStorage.getItem('tool') || Theme.LIGHT;
+bodyTheme.classList.add(thema);
+themeSwitch.checked = thema === Theme.DARK;
 
-if (bodyTheme.classList.contains(Theme.DARK)) {
-    themeSwitch.checked = true;
-};
-
-if (!localStorage.tool) {
-        localStorage.setItem('tool', Theme.LIGHT);
-    };
 // =====================второй способ!===========================
 // if (localStorage.getItem('tool')) {    
 //     themeSwitch.checked = bodyTheme.classList.contains(Theme.DARK)
@@ -27,25 +21,15 @@ if (!localStorage.tool) {
 function onChange() {           
     if (this.checked) {        
         localStorage.setItem('tool', Theme.DARK);
-        bodyTheme.classList.remove(Theme.LIGHT);
-        bodyTheme.classList.add(Theme.DARK); 
+        bodyColor('light-theme', 'dark-theme');
     }
     else {           
         localStorage.setItem('tool', Theme.LIGHT);
-        bodyTheme.classList.remove(Theme.DARK);
-        bodyTheme.classList.add(Theme.LIGHT);        
+        bodyColor('dark-theme',  'light-theme');
     }
 };
+function bodyColor(themeRemove, themeAdd) {
+    bodyTheme.classList.remove(themeRemove);
+    bodyTheme.classList.add(themeAdd);    
+}
 
-
-
-
-
-// function bodyDark() {
-//     bodyTheme.classList.remove(Theme.LIGHT);
-//     bodyTheme.classList.add(Theme.DARK);
-// };
-// function bodyLight() {
-//     bodyTheme.classList.remove(Theme.DARK);
-//     bodyTheme.classList.add(Theme.LIGHT);    
-// };    
